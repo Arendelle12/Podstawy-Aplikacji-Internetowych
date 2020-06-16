@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <form action="~/RulesSend.cshtml" method="post">
+        <fieldset>
+            <div>
+                <label for="rule">Rule:</label>
+                <input type="text" name="rule" value="" />
+            </div>
+            <label>&nbsp;</label>
+            <input type="submit" value="Submit" class="submit" />
+        </fieldset>
+    </form>
+    <ol>
+        @{
+            if (Session["rules"] != null)
+            {
+                foreach (string rule in (List<string>)Session["rules"])
+                {
+                    <li>@rule</li>
+                }
+            }
+        }
+    </ol>
+</body>
+</html>
